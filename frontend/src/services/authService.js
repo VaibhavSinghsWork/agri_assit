@@ -2,7 +2,7 @@ import api from "./api";
 
 export const signupUser = async (userData) => {
     const response = await api.post(
-        "/auth/signup",
+        "/api/auth/signup",
         userData
     );
 
@@ -11,7 +11,7 @@ export const signupUser = async (userData) => {
 
 export const loginUser = async (credentials) => {
     const response = await api.post(
-        "/auth/login",
+        "/api/auth/login",
         credentials
     );
 
