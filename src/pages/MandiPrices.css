@@ -1,0 +1,867 @@
+/* =========================================
+   MANDI PRICES PAGE
+========================================= */
+
+.mandi-page {
+    min-height: 100vh;
+    background: #f5f7f3;
+    padding-bottom: 60px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.mandi-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #285c35,
+            #3d7c43
+        );
+
+    padding: 60px 20px;
+    color: white;
+}
+
+.mandi-hero-content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.mandi-badge {
+    display: inline-block;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.mandi-hero h1 {
+    margin: 0 0 12px;
+
+    font-size: 42px;
+
+    font-weight: 700;
+}
+
+.mandi-hero p {
+    margin: 0;
+
+    max-width: 600px;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.mandi-search-section {
+    max-width: 1100px;
+
+    margin: -35px auto 0;
+
+    padding: 0 20px;
+
+    position: relative;
+}
+
+.mandi-search-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mandi-search-card h2 {
+    margin: 0 0 6px;
+
+    color: #234b2b;
+
+    font-size: 24px;
+}
+
+.search-description {
+    margin: 0 0 25px;
+
+    color: #69736b;
+}
+
+
+/* FORM */
+
+.mandi-form {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        auto;
+
+    gap: 18px;
+
+    align-items: end;
+}
+
+.mandi-input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.mandi-input-group label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #39443b;
+}
+
+.mandi-input-group select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d5ddd5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #303830;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.mandi-input-group select:focus {
+    border-color: #43834a;
+
+    box-shadow:
+        0 0 0 3px rgba(67, 131, 74, 0.12);
+}
+
+
+/* BUTTON */
+
+.mandi-search-button {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 13px 24px;
+
+    background: #e59b27;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    min-height: 47px;
+
+    transition: 0.2s;
+}
+
+.mandi-search-button:hover {
+    background: #d78d1d;
+
+    transform: translateY(-1px);
+}
+
+.mandi-search-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.mandi-error {
+    max-width: 1060px;
+
+    margin: 25px auto;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    background: #fff0f0;
+
+    border: 1px solid #f1c5c5;
+
+    color: #a32d2d;
+}
+
+
+/* =========================================
+   RESULTS
+========================================= */
+
+.mandi-results {
+    max-width: 1100px;
+
+    margin: 45px auto 0;
+
+    padding: 0 20px;
+}
+
+.results-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 22px;
+}
+
+.results-label {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    color: #6d826f;
+}
+
+.results-heading h2 {
+    margin: 5px 0 0;
+
+    color: #234b2b;
+
+    font-size: 27px;
+}
+
+.result-count {
+    padding: 7px 12px;
+
+    background: #e8f1e8;
+
+    border-radius: 20px;
+
+    color: #39703f;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   PRICE CARDS
+========================================= */
+
+.mandi-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.mandi-price-card {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    border: 1px solid #e3e9e3;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
+}
+
+.mandi-price-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+
+/* MARKET HEADER */
+
+.market-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+.market-icon {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 11px;
+
+    background: #edf5ed;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.market-header h3 {
+    margin: 0 0 4px;
+
+    color: #27372a;
+
+    font-size: 17px;
+}
+
+.market-header span {
+    color: #788278;
+
+    font-size: 13px;
+}
+
+
+/* PRICE */
+
+.price-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.price-box {
+    background: #f7f9f6;
+
+    border-radius: 9px;
+
+    padding: 12px 8px;
+
+    text-align: center;
+}
+
+.price-box span {
+    display: block;
+
+    font-size: 11px;
+
+    color: #7a837b;
+
+    margin-bottom: 5px;
+}
+
+.price-box strong {
+    display: block;
+
+    color: #344336;
+
+    font-size: 16px;
+}
+
+.modal-price {
+    background: #eef6ed;
+}
+
+.modal-price strong {
+    color: #31703a;
+}
+
+
+/* MARKET INFO */
+
+.market-info {
+    border-top: 1px solid #edf0ed;
+
+    padding-top: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.market-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.market-info span {
+    font-size: 11px;
+
+    color: #8a918b;
+}
+
+.market-info strong {
+    font-size: 13px;
+
+    color: #485248;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.mandi-empty {
+    max-width: 700px;
+
+    margin: 70px auto;
+
+    padding: 45px 25px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.mandi-empty h2 {
+    margin: 0 0 8px;
+
+    color: #304932;
+}
+
+.mandi-empty p {
+    margin: 0;
+
+    color: #778078;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.mandi-info {
+    max-width: 1060px;
+
+    margin: 45px auto 0;
+
+    padding: 20px;
+
+    background: #eef5ec;
+
+    border: 1px solid #dbe8d9;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 20px;
+}
+
+.mandi-info h3 {
+    margin: 0 0 6px;
+
+    font-size: 15px;
+
+    color: #35583a;
+}
+
+.mandi-info p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #647066;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .mandi-hero {
+        padding: 45px 18px 65px;
+    }
+
+    .mandi-hero h1 {
+        font-size: 32px;
+    }
+
+    .mandi-hero p {
+        font-size: 15px;
+    }
+
+    .mandi-search-section {
+        margin-top: -35px;
+
+        padding: 0 14px;
+    }
+
+    .mandi-search-card {
+        padding: 20px;
+    }
+
+    .mandi-form {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .mandi-search-button {
+        width: 100%;
+    }
+
+    .mandi-results {
+        padding: 0 14px;
+
+        margin-top: 35px;
+    }
+
+    .results-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .results-heading h2 {
+        font-size: 23px;
+    }
+
+    .mandi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mandi-info {
+        margin: 35px 14px 0;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .mandi-hero h1 {
+        font-size: 28px;
+    }
+
+    .mandi-search-card h2 {
+        font-size: 21px;
+    }
+
+    .mandi-price-card {
+        padding: 17px;
+    }
+
+    .price-box {
+        padding: 10px 5px;
+    }
+
+    .price-box strong {
+        font-size: 14px;
+    }
+
+    .market-info {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+/* =========================================
+   MANDI SELECTOR
+========================================= */
+
+.mandi-selector {
+    margin-top: 25px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #edf0ed;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.mandi-selector label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #39443b;
+}
+
+.mandi-selector select {
+    min-width: 280px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d5ddd5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #303830;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.mandi-selector select:focus {
+    border-color: #43834a;
+
+    box-shadow:
+        0 0 0 3px rgba(67, 131, 74, 0.12);
+}
+
+.mandi-selector span {
+    font-size: 12px;
+
+    color: #788278;
+}
+
+
+@media (max-width: 768px) {
+
+    .mandi-selector {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .mandi-selector select {
+        width: 100%;
+
+        min-width: 0;
+    }
+}
+
+
+/* MANDI SELECTOR */
+
+.mandi-selector {
+    margin-top: 28px;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid #dce8df;
+    background: #f7fbf8;
+}
+
+.mandi-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.mandi-selector label {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.mandi-selector-header p {
+    margin: 0;
+    color: #68756d;
+    font-size: 13px;
+}
+
+.mandi-count {
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #e5f2e8;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.mandi-selector select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd8cf;
+    border-radius: 10px;
+    background: white;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+.mandi-selector select:focus {
+    border-color: #4d8b5a;
+}
+
+
+
+/* ================================
+   SEARCHABLE MANDI SELECTOR
+================================ */
+
+.mandi-search-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.mandi-search-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.mandi-search-input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.12);
+}
+
+.mandi-suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mandi-suggestion {
+    padding: 13px 16px;
+    cursor: pointer;
+    font-size: 15px;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background 0.15s ease;
+}
+
+.mandi-suggestion:last-child {
+    border-bottom: none;
+}
+
+.mandi-suggestion:hover,
+.mandi-suggestion.active {
+    background: #f1f8f2;
+}
+
+.no-mandi-found {
+    padding: 14px 16px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+
+    .mandi-search-input {
+        padding: 13px 14px;
+        font-size: 14px;
+    }
+
+    .mandi-suggestion {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .mandi-suggestions {
+        max-height: 220px;
+    }
+}
+
+
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .mandi-selector {
+        padding: 17px;
+    }
+
+    .mandi-selector-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .mandi-count {
+        align-self: flex-start;
+    }
+}
+
