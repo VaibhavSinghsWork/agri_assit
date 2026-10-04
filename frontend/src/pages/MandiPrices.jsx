@@ -95,7 +95,7 @@ const MandiPrices = () => {
 
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/mandi/prices",
+                `${import.meta.env.VITE_API_URL}/api/mandi/prices`,
                 {
                     params: {
                         crop,
