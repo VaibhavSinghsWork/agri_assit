@@ -780,36 +780,35 @@
 
 
 /* =========================================================
-   FERTILIZER & SOIL INFORMATION
+   FERTILIZER / SOIL INFORMATION SECTION
    ========================================================= */
 
 .fertilizer-info-section {
   padding: 110px 0;
-
   background: white;
 }
 
 .fertilizer-layout {
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 75px;
-
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 70px;
   align-items: center;
+}
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.fertilizer-info-content {
+  min-width: 0;
 }
 
 .fertilizer-info-content h2 {
   max-width: 570px;
-
   margin: 0 0 20px;
-
   color: #1b2d1e;
-
   font-size: clamp(2rem, 4vw, 3.4rem);
-
   line-height: 1.08;
-
   letter-spacing: -1.5px;
 }
 
@@ -819,172 +818,177 @@
 
 .fertilizer-info-content > p {
   max-width: 580px;
-
   color: #687468;
-
   line-height: 1.8;
 }
 
+/* =========================================================
+   FERTILIZER POINTS
+   ========================================================= */
+
 .fertilizer-points {
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-
   margin: 35px 0;
 }
 
 .fertilizer-points > div {
   display: flex;
-
   align-items: flex-start;
-
   gap: 12px;
+  min-width: 0;
 }
 
 .fertilizer-points > div > span {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   width: 31px;
   height: 31px;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background: #e8f3e3;
-
   color: #4f8a43;
-
   font-size: 0.65rem;
-
   font-weight: 800;
+}
+
+.fertilizer-points > div > div {
+  min-width: 0;
 }
 
 .fertilizer-points strong {
   display: block;
-
   margin-bottom: 3px;
 }
 
 .fertilizer-points p {
   margin: 0;
-
   color: #747e75;
-
   font-size: 0.78rem;
-
   line-height: 1.5;
 }
 
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
 .dark-btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   min-height: 50px;
-
   padding: 0 23px;
-
   border-radius: 9px;
-
   background: #1c3522;
-
   color: white;
-
   text-decoration: none;
-
   font-size: 0.86rem;
-
   font-weight: 800;
-
-  box-shadow:
-    0 8px 20px rgba(28, 53, 34, 0.12);
-
+  box-shadow: 0 8px 20px rgba(28, 53, 34, 0.12);
   transition: 0.25s ease;
 }
 
 .dark-btn:hover {
   background: #315a38;
-
   transform: translateY(-2px);
 }
 
-
 /* =========================================================
-   NPK CARD
+   NPK VISUAL
    ========================================================= */
 
 .npk-visual {
   display: flex;
-
   justify-content: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .npk-card {
-  width: min(100%, 460px);
-
+  width: 100%;
+  max-width: 460px;
   padding: 31px;
+  box-sizing: border-box;
+
+  /* IMPORTANT FIX */
+  display: flex !important;
+  flex-direction: column !important;
 
   border: 1px solid #dce8d8;
-
   border-radius: 24px;
 
-  background:
-    linear-gradient(
-      145deg,
-      #edf6e9,
-      #f7faf5
-    );
+  background: linear-gradient(
+    145deg,
+    #edf6e9,
+    #f7faf5
+  );
 
   box-shadow:
     0 25px 60px rgba(55, 90, 48, 0.1);
 }
 
-.npk-header {
-  display: flex;
+/* =========================================================
+   NPK HEADER
+   ========================================================= */
 
+.npk-header {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
   justify-content: space-between;
 
-  padding-bottom: 20px;
+  gap: 20px;
 
+  padding-bottom: 20px;
   border-bottom: 1px solid #d6e3d1;
 
   color: #5c7158;
-
   font-size: 0.68rem;
-
   font-weight: 800;
-
   letter-spacing: 1.5px;
 }
 
-.npk-items {
-  display: flex;
+.npk-header span {
+  display: block;
+  white-space: nowrap;
+}
 
-  flex-direction: column;
+.npk-header span:last-child {
+  margin-left: auto;
+}
+
+/* =========================================================
+   NPK ITEMS
+   ========================================================= */
+
+.npk-items {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex !important;
+  flex-direction: column !important;
 
   gap: 15px;
-
   margin: 25px 0;
 }
 
 .npk-item {
   display: flex;
-
   align-items: center;
-
   gap: 15px;
+
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 
   padding: 15px;
 
   border: 1px solid #edf1eb;
-
   border-radius: 14px;
 
   background: white;
@@ -1001,53 +1005,168 @@
 
 .npk-circle {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   width: 48px;
   height: 48px;
-
   flex-shrink: 0;
 
   border-radius: 50%;
 
-  background:
-    linear-gradient(
-      145deg,
-      #4f8145,
-      #6a9b5c
-    );
+  background: linear-gradient(
+    145deg,
+    #4f8145,
+    #6a9b5c
+  );
 
   color: white;
-
   font-size: 1.1rem;
-
   font-weight: 800;
+}
+
+.npk-item > div:last-child {
+  min-width: 0;
 }
 
 .npk-item strong {
   display: block;
-
   margin-bottom: 3px;
 }
 
 .npk-item span {
   color: #7a847b;
-
   font-size: 0.75rem;
 }
 
-.npk-footer {
-  padding-top: 20px;
+/* =========================================================
+   NPK FOOTER
+   ========================================================= */
 
+.npk-footer {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-top: 20px;
   border-top: 1px solid #d6e3d1;
 
   color: #577052;
-
   font-size: 0.78rem;
-
   font-weight: 700;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .fertilizer-info-section {
+    padding: 85px 0;
+  }
+
+  .fertilizer-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 45px;
+  }
+
+  .fertilizer-points {
+    gap: 15px;
+  }
+
+  .npk-card {
+    padding: 25px;
+  }
+}
+
+/* =========================================================
+   MOBILE / SMALL TABLET
+   ========================================================= */
+@media (max-width: 768px) {
+
+  .fertilizer-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .npk-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .npk-header {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .npk-items {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .fertilizer-info-section {
+    padding: 55px 0;
+  }
+
+  .fertilizer-info-content h2 {
+    font-size: 2.1rem;
+    letter-spacing: -1px;
+  }
+
+  .fertilizer-info-content > p {
+    font-size: 0.95rem;
+  }
+
+  .fertilizer-points p {
+    font-size: 0.8rem;
+  }
+
+  .dark-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .npk-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .npk-header {
+    gap: 10px;
+    font-size: 0.62rem;
+    letter-spacing: 1.2px;
+  }
+
+  .npk-items {
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .npk-item {
+    padding: 13px;
+    gap: 12px;
+  }
+
+  .npk-circle {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .npk-footer {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
 }
 
 
