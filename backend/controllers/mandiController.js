@@ -1,55 +1,38 @@
-const {
-    getMandiPrices
-} = require("../services/mandiService");
+
+const { getMandiPrices } = require("../services/mandiService");
 
 const getPrices = async (req, res) => {
-
     try {
+        const { crop, location } = req.query;
 
-        const {
-            crop,
-            location
-        } = req.query;
-
-        if (!crop) {
-
+        if (typeof crop !== "string" || !crop.trim()) {
             return res.status(400).json({
                 success: false,
                 message: "Crop is required."
             });
-
         }
 
-        const prices = await getMandiPrices(
-            crop,
-            location
-        );
+        if (typeof location !== "string" || !location.trim()) {
+            return res.status(400).json({
+                success: false,
+                message: "State/location is required."
+            });
+        }
 
-        res.status(200).json({
+        const prices = await getMandiPrices(crop, location);
 
+        return res.status(200).json({
             success: true,
-
             count: prices.length,
-
             data: prices
-
         });
-
     } catch (error) {
+        console.error("Mandi Controller Error:", error);
 
-        console.error(
-            "Mandi Controller Error:",
-            error.message
-        );
-
-        res.status(500).json({
-
+        return res.status(500).json({
             success: false,
-
-            message: error.message
-
+            message: "Unable to fetch mandi prices. Please try again later."
         });
-
     }
 };
 
